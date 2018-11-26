@@ -45,8 +45,10 @@ public class TestBase {
             capabilities.setCapability(AndroidMobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
             capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, properties.getProperty("app_package"));
             capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, properties.getProperty("app_activity"));
-            capabilities.setCapability("automationName", AutomationName.ANDROID_UIAUTOMATOR2);
             capabilities.setCapability("noReset", true);
+
+//            For Android 7.0 and Above
+//            capabilities.setCapability("automationName", AutomationName.ANDROID_UIAUTOMATOR2);
 
             driver = new AndroidDriver(service.getUrl(), capabilities);
             driver.manage().timeouts().implicitlyWait(TestUtils.IMPLICIT_WAIT, TimeUnit.SECONDS);

@@ -20,5 +20,18 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
 
+def suite1 = project.hasProperty("suite1")
+def suite2 = project.hasProperty("suite2")
+
+test {
+    useTestNG() {
+        dependsOn cleanTest
+        useDefaultListeners = true
+
+        if (suite1) {
+            suites "testng.xml"
+        }
+    }
 }
