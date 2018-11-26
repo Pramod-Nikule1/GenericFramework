@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test-Suite" parallel="tests" thread-count="2">
+    <test name="Slack Android Test Suite">
+        <parameter name="platform" value="android"/>
+        <classes>
+            <class name="com.DemoTest"/>
+        </classes>
+    </test>
+
+    <test name="Slack Web Test Suite">
+        <parameter name="platform" value="web"/>
+        <classes>
+            <class name="com.DemoTest"/>
+        </classes>
+    </test>
+</suite>
